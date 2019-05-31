@@ -50,6 +50,7 @@
 				</select>
 			</div>
 			<div class="form-group">
+				<a class="btn btn-danger" href="{{ route('productos.index') }}">Cancelar</a>
 				<button class="btn btn-success">Guardar</button>
 			</div>
 		</form>

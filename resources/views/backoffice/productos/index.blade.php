@@ -26,12 +26,19 @@
 						<td>{{$producto->costo}}</td>
 						<td>{{$producto->precio}}</td>
 						<td>{{$producto->cantidad}}</td>
-						<td>{{$producto->unidad_id}}</td>
-						<td>{{$producto->estado_id}}</td>
+						<td>{{$producto->unidad->nombre}}</td>
+						<td><span class="badge @if($producto->estado_id == 3)badge-danger @else badge-success @endif">
+								{{$producto->estado->nombre}}
+							</span>
+						</td>
 						<td>
 							<a class="btn btn-warning" href="{{ route('productos.edit',$producto->id) }}"><i class="far fa-edit"></i></a>
 
-							<a class="btn btn-primary" href="#"><i class="far fa-image"></i></a>
+							@if($producto->estado_id != 3)
+								<a class="btn btn-danger" href="{{ route('producto-inactivar',$producto->id) }}"><i class="fas fa-trash"></i></a>
+							@endif
+
+							<a class="btn btn-primary" href="{{ route('img',$producto->id) }}"><i class="far fa-image"></i></a>
 
 						</td>
 					</tr>

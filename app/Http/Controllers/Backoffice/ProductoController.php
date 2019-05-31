@@ -13,7 +13,7 @@ class ProductoController extends Controller
     //Función para listar
     public function index()
     {
-        $productos = Producto::all();
+        $productos = Producto::where('estado_id','!=',3)->get();
         return view('backoffice.productos.index',compact('productos'));
     }
 
@@ -91,8 +91,12 @@ class ProductoController extends Controller
         return redirect()->route('productos.index');
     }
 
-    public function destroy($id)
+    public function inactivar($id)
     {
-        //
+        $producto = Producto::find($id);
+        $producto->estado_id = 3;
+        $producto->save();
+
+        return redirect()->back();
     }
 }
