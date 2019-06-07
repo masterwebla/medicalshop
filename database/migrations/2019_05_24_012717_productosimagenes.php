@@ -16,6 +16,7 @@ class Productosimagenes extends Migration
         Schema::create('productos_imagenes', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->string('archivo');
+            $table->boolean('principal')->default('false');
             $table->unsignedBigInteger('producto_id');
             $table->foreign('producto_id')->references('id')->on('productos');
             $table->timestamps();

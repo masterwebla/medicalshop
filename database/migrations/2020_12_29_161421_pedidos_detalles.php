@@ -16,7 +16,7 @@ class PedidosDetalles extends Migration
         Schema::create('pedidos_detalles', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->unsignedBigInteger('pedido_id');
-            $table->foreign('pedido_id')->references('id')->on('pedidos');
+            $table->foreign('pedido_id')->references('id')->on('pedidos')->onDelete('cascade');
             $table->unsignedBigInteger('producto_id');
             $table->foreign('producto_id')->references('id')->on('productos');
             $table->integer('cantidad');

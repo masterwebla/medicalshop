@@ -43,7 +43,7 @@
 			</div>
 			<div class="form-group">
 				<label>Estado</label>
-				<select name="unidad_id" class="form-control" required>
+				<select name="estado_id" class="form-control" required>
 					<option value="">Seleccionar estado</option>
 					@foreach($estados as $estado)
 						<option @if($producto->estado_id==$estado->id) selected @endif value="{{$estado->id}}">{{$estado->nombre}}</option>

@@ -13,7 +13,7 @@ class ProductoController extends Controller
     //Función para listar
     public function index()
     {
-        $productos = Producto::where('estado_id','!=',3)->get();
+        $productos = Producto::where('estado_id','!=',3)->orderBy('nombre')->orderBy('precio')->get();
         return view('backoffice.productos.index',compact('productos'));
     }
 
@@ -73,7 +73,7 @@ class ProductoController extends Controller
             'nombre' => 'required|max:100',
             'descripcion' => 'required',
             'costo' => 'required|numeric',
-            'precio' => 'required|numeric|min:0|max:6',
+            'precio' => 'required|numeric|min:0|min:0',
             'cantidad' => 'required|numeric'
         ]);
 
