@@ -10,6 +10,11 @@ use App\Estadoproducto;
 
 class ProductoController extends Controller
 {
+    public function __construct(){
+        $this->middleware('auth');
+        $this->middleware('admin');
+    }
+
     //Función para listar
     public function index()
     {

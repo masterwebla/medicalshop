@@ -17,3 +17,10 @@ Route::get('/carrito/agregar/{id}','Frontoffice\CarritoController@agregar')->nam
 Route::get('/carrito/vaciar','Frontoffice\CarritoController@vaciar')->name('carrito-vaciar');
 Route::get('/carrito/borrar/{id}','Frontoffice\CarritoController@borrar')->name('carrito-borrar');
 Route::get('/carrito/actualizar/','Frontoffice\CarritoController@actualizar')->name('carrito-actualizar');
+
+
+
+//las rutas /login /register
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
