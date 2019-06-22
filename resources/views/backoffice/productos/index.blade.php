@@ -5,6 +5,13 @@
 	<div class="container">
 		<h1>Listado de Productos</h1>
 		<a class="btn btn-success" href="{{ route('productos.create') }}">Crear Producto</a>
+		<!-- BOTON EXPORTAR PDF -->
+		<a class="btn btn-warning" href="{{ route('productos-pdf') }}"><i class="far fa-file-pdf"></i></a>
+
+		<!-- BOTON EXPORTAR EXCEL -->
+		<a class="btn btn-primary" href="{{ route('productos-excel') }}"><i class="far fa-file-excel"></i></a>
+		<button type="button" class="btn btn-info" data-toggle="modal" data-target="#impExcel"><i class="far fa-file-excel"></i></button>
+
 		<table class="table table-striped table-hover">
 			<thead>
 				<tr>
@@ -46,4 +53,6 @@
 			</tbody>
 		</table>
 	</div>
+	<!-- The Modal -->
+	@include('backoffice.productos.modalexcel')
 @endsection

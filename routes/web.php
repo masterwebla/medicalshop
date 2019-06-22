@@ -5,6 +5,10 @@ Route::get('/detalles/{id}', 'Frontoffice\PaginasController@detalles')->name('de
 
 //Ruta para el CRUD de productos
 Route::resource('productos','Backoffice\ProductoController');
+Route::get('/productos-pdf','Backoffice\ProductoController@exportarPDF')->name('productos-pdf');
+Route::get('/productos-excel','Backoffice\ProductoController@exportarExcel')->name('productos-excel');
+Route::post('/productos-impexcel','Backoffice\ProductoController@importarExcel')->name('productos-impexcel');
+
 Route::get('producto-inactivar/{id}','Backoffice\ProductoController@inactivar')->name('producto-inactivar');
 
 Route::get('/imagenes/{producto_id}','Backoffice\ProductoimagenController@index')->name('img');
