@@ -15,6 +15,10 @@ Route::get('/imagenes/{producto_id}','Backoffice\ProductoimagenController@index'
 Route::post('/imagenes/subir','Backoffice\ProductoimagenController@store')->name('img-save');
 Route::delete('/imagenes/eliminar/{id}','Backoffice\ProductoimagenController@destroy')->name('img-delete');
 
+//Ruta para la caja de POS
+Route::get('/caja','Backoffice\PosController@caja')->name('caja');
+Route::get('/buscar-productos','Backoffice\PosController@buscarProductos')->name('buscar-productos');
+
 //Rutas para el Carrito de Compras
 Route::get('/carrito','Frontoffice\CarritoController@mostrar')->name('carrito-mostrar');
 Route::get('/carrito/agregar/{id}','Frontoffice\CarritoController@agregar')->name('carrito-agregar');

@@ -21,6 +21,7 @@ class Productos extends Migration
             $table->integer('costo');
             $table->integer('precio');
             $table->integer('cantidad');
+            $table->string('imagen')->default('no-imagen.png');
             $table->unsignedBigInteger('unidad_id');
             $table->foreign('unidad_id')->references('id')->on('unidades');
             $table->unsignedBigInteger('estado_id');

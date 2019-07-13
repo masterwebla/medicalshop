@@ -14,5 +14,6 @@
 	<header>LOGO - MENU</header>
 	@yield('contenido')
 	<footer>Todos los derechos reservados</footer>
+    @yield('scripts')
 </body>
 </html>

@@ -22,9 +22,12 @@ class ProductoController extends Controller
     }
 
     //Función para listar
-    public function index()
+    public function index(Request $request)
     {
-        $productos = Producto::where('estado_id','!=',3)->orderBy('nombre')->orderBy('precio')->get();
+        $productos = Producto::nombre($request->nombre)
+                        ->precio($request->precio)
+                        ->where('estado_id','!=',3)->orderBy('nombre')
+                        ->orderBy('precio')->get();
         return view('backoffice.productos.index',compact('productos'));
     }
 

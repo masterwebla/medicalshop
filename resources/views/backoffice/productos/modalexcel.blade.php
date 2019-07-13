@@ -11,10 +11,10 @@
       <!-- Modal body -->
       <div class="modal-body text-center">
        	<form action="{{ route('productos-impexcel') }}" method="post" enctype="multipart/form-data">
-			@csrf				
-			<input name="archivo" type="file" >
-			<button class="btn btn-success">Subir</button>
-			</form>
+    			@csrf				
+    			<input name="archivo" type="file" >
+    			<button class="btn btn-success">Subir</button>
+			  </form>
       </div>
 
       <!-- Modal footer -->
