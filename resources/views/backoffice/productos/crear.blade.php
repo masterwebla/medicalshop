@@ -1,9 +1,10 @@
 @extends('backoffice.template')
 @section('titulo','Crear producto')
 
+@section('titulosect','Crear Producto')
+
 @section('contenido')
 	<div class="container">
-		<h1>Crear Producto</h1>
 		@include('backoffice.secciones.errores')
 		<form action="{{ route('productos.store') }}" method="post">
 			@csrf

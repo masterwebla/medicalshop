@@ -1,9 +1,12 @@
 @extends('backoffice.template')
 @section('titulo','Editar producto')
 
+@section('titulosect')
+	Editar Producto {{$producto->nombre}}
+@endsection
+
 @section('contenido')
 	<div class="container">
-		<h1>Editar Producto {{$producto->nombre}}</h1>
 		@include('backoffice.secciones.errores')
 		<form action="{{ route('productos.update',$producto->id) }}" method="post">
 			@method('put')

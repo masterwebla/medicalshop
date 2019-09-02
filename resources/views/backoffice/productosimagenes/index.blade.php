@@ -1,10 +1,11 @@
 @extends('backoffice.template')
 @section('titulo','Imagenes')
+@section('titulosect')
+	Imágenes para {{$producto->nombre}}
+@endsection
 
 @section('contenido')
 	<div class="container">
-		<h2 class="text-center">Imágenes para {{$producto->nombre}}</h2>
-		<hr>
 		@include('backoffice.secciones.errores')
 		<div class="text-center">
 			<form action="{{ route('img-save') }}" method="post" enctype="multipart/form-data">

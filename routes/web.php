@@ -3,6 +3,8 @@
 Route::get('/', 'Frontoffice\PaginasController@inicio')->name('inicio');
 Route::get('/detalles/{id}', 'Frontoffice\PaginasController@detalles')->name('detalles');
 
+Route::view('templatev2','frontoffice.templatev2');
+
 //Ruta para el CRUD de productos
 Route::resource('productos','Backoffice\ProductoController');
 Route::get('/productos-pdf','Backoffice\ProductoController@exportarPDF')->name('productos-pdf');

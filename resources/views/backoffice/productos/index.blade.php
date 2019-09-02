@@ -1,9 +1,10 @@
 @extends('backoffice.template')
 @section('titulo','Listado de Productos')
 
+@section('titulosect','Listado de Productos')
+
 @section('contenido')
 	<div class="container">
-		<h1>Listado de Productos</h1>
 		<div class="row">
 			<div class="col-md-8">
 				<!-- FORMULARIO DE FILTROS -->
@@ -31,7 +32,7 @@
 			</div>
 			<div class="col-md-4 text-right">
 				<!-- BOTONES -->
-				<a class="btn btn-success" href="{{ route('productos.create') }}"><i class="far fa-plus"></i></a>
+				<a class="btn btn-success" href="{{ route('productos.create') }}"><i class="fa fa-plus"></i></a>
 				<!-- BOTON EXPORTAR PDF -->
 				<a class="btn btn-warning" href="{{ route('productos-pdf') }}"><i class="far fa-file-pdf"></i></a>
 
